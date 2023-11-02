@@ -75,7 +75,6 @@ export const Product = ({
               {isFavorite ? (
                 <Image
                   src="/icons/heart-fill.svg"
-                  onClick={() => addToFavoritesMutation({id: id})}
                   width={20}
                   height={20}
                   alt="Heart"
@@ -83,7 +82,6 @@ export const Product = ({
               ) : (
                 <Image
                   src="/icons/heart.svg"
-                  onClick={() => removeFromFavoritesMutation({id: id})}
                   width={20}
                   height={20}
                   alt="Heart"
