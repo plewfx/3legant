@@ -31,7 +31,7 @@ export const Navbar = () => {
       if (body) {
         body.style.overflowX = open ? "hidden" : null;
       }
-    }, [open])
+    }, [body, open])
 
   return (
     <nav className="bg-white py-4">
