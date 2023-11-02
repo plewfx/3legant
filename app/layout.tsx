@@ -1,10 +1,8 @@
-import { ClerkProvider } from "@clerk/nextjs";
-
 import type { Metadata } from "next";
 
 import { Inter } from "next/font/google";
 import "./globals.css";
-import ConvexClientProvider from "@/components/providers/convex-client-provider";
+import { ConvexClientProvider } from "@/components/providers/convex-client-provider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,10 +24,10 @@ export const metadata: Metadata = {
         media: "(prefers-color-scheme: dark)",
         url: "/logo-dark.svg",
         href: "/logo-dark.svg",
-      }
-    ]
-  }
-}
+      },
+    ],
+  },
+};
 
 export default function RootLayout({
   children,
@@ -37,14 +35,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY!}>
-      <html lang="en">
-        <body className={inter.className}>
-          <ConvexClientProvider>
-            {children}
-          </ConvexClientProvider>
-        </body>
-      </html>
-    </ClerkProvider>
+    <html lang="en">
+      <body className={inter.className}>
+        <ConvexClientProvider>
+          {children}
+        </ConvexClientProvider>
+      </body>
+    </html>
   );
 }
