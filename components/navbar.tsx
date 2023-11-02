@@ -29,7 +29,7 @@ export const Navbar = () => {
 
     React.useEffect(() => {
       if (body) {
-        body.style.overflowX = open ? "hidden" : null;
+        body.style.overflowX = open ? "hidden" : "";
       }
     }, [body, open])
 
